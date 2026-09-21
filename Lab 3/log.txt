@@ -1,3 +1,15 @@
+commit d2866241a99c04c20a817ac5308582b765576af2
+Author: James0ng-sit <2604448@sit.singaporetech.edu.sg>
+Date:   Mon Sep 21 15:00:48 2026 +0800
+
+    Add files via upload
+
+commit 6b814a49ac968983d6ffd1943774ff3f6b96ef9a
+Author: James0ng-sit <2604448@sit.singaporetech.edu.sg>
+Date:   Mon Sep 21 14:56:43 2026 +0800
+
+    Delete lab 2 directory
+
 commit 578aae4d8d3bfb0269cda6d93e67b18488384319
 Author: James <bakajames@hotmail.com>
 Date:   Mon Sep 21 14:49:19 2026 +0800
