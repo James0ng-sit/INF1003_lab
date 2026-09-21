@@ -9,7 +9,6 @@ while True:
         print("=====Audit report======")
         print("Current inventory: ", inventory)
         print("failed entries: ", failed_entries)
-        print("Exiting the program.")
         break
     
 
