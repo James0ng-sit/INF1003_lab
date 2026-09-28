@@ -61,9 +61,12 @@ def save_inventory(inventory, history):
     with open("inventory.txt", "w") as file:
         file.write(f"{inventory}\n")
         file.write(",".join(map(str, history)))
+        print("Inventory and history saved to 'inventory.txt'.")
 
 def main():
     inventory, history = load_inventory()
+    print(f"Current inventory: {inventory}. You can add stock quantities up to {MAX_INVENTORY}.")
+    print("transactions will be recorded in 'inventory.txt'. Type 'quit' to exit the program.")
     total_units = 0
     total_failed_entries = 0
     delivery_count = 0
