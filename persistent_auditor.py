@@ -56,7 +56,12 @@ def generate_audit_report(inventory, total_units, failed_entries, total_tax):
     print("Failed/Rejected entries:", failed_entries)
     print(f"Total tax collected: {total_tax:.2f}")
 
-    
+
+def save_inventory(inventory, history):
+    with open("inventory.txt", "w") as file:
+        file.write(f"{inventory}\n")
+        file.write(",".join(map(str, history)))
+
 def main():
     inventory, history = load_inventory()
     total_units = 0
@@ -70,6 +75,7 @@ def main():
 
         if result is None:
             generate_audit_report(inventory, total_units, total_failed_entries, total_tax)
+            save_inventory(inventory, history)
             print("Exiting the program.")
             break
 
