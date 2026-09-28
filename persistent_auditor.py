@@ -85,11 +85,14 @@ def main():
             continue
 
         inventory += result
+        history.append(result)
         total_units = process_delivery(total_units, result)
         tax = calculate_tax(result)
         total_tax += tax
         delivery_count += 1
         print(f"Accepted {result} units. Tax on this delivery: {tax:.2f}. Current inventory: {inventory}")
+
+
 
 try:
     main()
