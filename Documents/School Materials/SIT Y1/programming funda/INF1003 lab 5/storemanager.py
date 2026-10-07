@@ -110,3 +110,12 @@ def get_number(prompt, number_type):
             return number_type(input(prompt))
         except ValueError:
             print("Please enter a valid number.")
+
+def show_menu():
+    print("\n===== INVENTORY MENU =====")
+    print("1. Display all products")
+    print("2. Add product")
+    print("3. Update stock")
+    print("4. Search product")
+    print("5. Save")
+    print("6. Exit")
