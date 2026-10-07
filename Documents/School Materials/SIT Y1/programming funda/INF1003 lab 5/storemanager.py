@@ -16,37 +16,49 @@ def save_inventory(inventory):
         json.dump(inventory, file, indent=4)
         print("Inventory saved successfully to", FILENAME)
 
-def search_item(inventory, item_name):
-    """Return the product from the list if it
-      exists, otherwise return None."""
+def search_product(inventory, name):
+    """Return the product dictionary that matches the name, or None."""
     for product in inventory:
-        if product['name'].lower() == item_name.lower():
+        if product["name"].lower() == name.lower():
             return product
     return None
 
-def add_product(inventory, name, price, quantity):
-    """Add a new product (a dictionary) to the inventory list"""
-    if search_item(inventory, name) is not None:
-        print("Product already exists in the inventory. use update stock instead.")
+
+def add_product(inventory, name, price, stock):
+    """Add a new product (a dictionary) to the inventory list."""
+    if search_product(inventory, name) is not None:
+        print("That product already exists. Use Update Stock instead.")
         return
     product = {
         "name": name,
         "price": price,
         "stock": stock,
-        "history": [stock],
+        "history": [stock],  # every stock change is recorded here
     }
     inventory.append(product)
-    print(f"Product '{name}' added to the inventory.")
+    print(f"Added {name}.")
 
-    def update_stock(inventory, name, change):
-        """Change stock by a number. Positive = restock, negative = sale/removal."""
-        product = search_item(inventory, name)
-        if product is None:
-            print("Product not found in the inventory.")
-            return
-        if product['stock'] + change < 0:
-            print("Insufficient stock to remove that quantity.", product['stock'], "available.")
-            return
-        product['stock'] += change
-        product['history'].append(product['stock'])
-        print(f"Stock for '{name}' updated. New stock: {product['stock']}.")
+
+def update_stock(inventory, name, change):
+    """Change stock by a number. Positive = restock, negative = sale/removal."""
+    product = search_product(inventory, name)
+    if product is None:
+        print("Product not found.")
+        return
+    if product["stock"] + change < 0:
+        print("Not enough stock. Current stock is", product["stock"])
+        return
+    product["stock"] += change
+    product["history"].append(change)  # keep the transaction, not just the total
+    print(f"{name} stock is now {product['stock']}.")
+
+
+def display_all(inventory):
+    """Print every product with its price, stock, and transaction history."""
+    if len(inventory) == 0:
+        print("Inventory is empty.")
+        return
+    print(f"{'Name':<15}{'Price':>10}{'Stock':>8}   History")
+    print("-" * 55)
+    for product in inventory:
+        print(f"{product['name']:<15}{product['price']:>10.2f}{product['stock']:>8}   {product['history']}")
