@@ -90,3 +90,14 @@ def update_stock(inventory, name, change):
     product["stock"] += change
     product["history"].append(change)  # keep the transaction, not just the total
     print(f"{name} stock is now {product['stock']}.")
+
+
+def display_all(inventory):
+    """Print every product with its price, stock, and transaction history."""
+    if len(inventory) == 0:
+        print("Inventory is empty.")
+        return
+    print(f"{'Name':<15}{'Price':>10}{'Stock':>8}   History")
+    print("-" * 55)
+    for product in inventory:
+        print(f"{product['name']:<15}{product['price']:>10.2f}{product['stock']:>8}   {product['history']}")
