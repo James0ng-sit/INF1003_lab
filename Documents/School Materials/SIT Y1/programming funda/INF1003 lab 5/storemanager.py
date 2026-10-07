@@ -17,8 +17,23 @@ def save_inventory(inventory):
         print("Inventory saved successfully to", FILENAME)
 
 def search_item(inventory, item_name):
-    """Return the prodcut from the dictionary if it exists, otherwise return None."""
+    """Return the product from the list if it
+      exists, otherwise return None."""
     for product in inventory:
         if product['name'].lower() == item_name.lower():
             return product
     return None
+
+def add_product(inventory, name, price, quantity):
+    """Add a new product (a dictionary) to the inventory list"""
+    if search_item(inventory, name) is not None:
+        print("Product already exists in the inventory. use update stock instead.")
+        return
+    product = {
+        "name": name,
+        "price": price,
+        "stock": stock,
+        "history": [stock],
+    }
+    inventory.append(product)
+    print(f"Product '{name}' added to the inventory.")
