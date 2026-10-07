@@ -37,3 +37,16 @@ def add_product(inventory, name, price, quantity):
     }
     inventory.append(product)
     print(f"Product '{name}' added to the inventory.")
+
+    def update_stock(inventory, name, change):
+        """Change stock by a number. Positive = restock, negative = sale/removal."""
+        product = search_item(inventory, name)
+        if product is None:
+            print("Product not found in the inventory.")
+            return
+        if product['stock'] + change < 0:
+            print("Insufficient stock to remove that quantity.", product['stock'], "available.")
+            return
+        product['stock'] += change
+        product['history'].append(product['stock'])
+        print(f"Stock for '{name}' updated. New stock: {product['stock']}.")
