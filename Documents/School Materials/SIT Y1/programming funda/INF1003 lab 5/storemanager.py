@@ -101,3 +101,12 @@ def display_all(inventory):
     print("-" * 55)
     for product in inventory:
         print(f"{product['name']:<15}{product['price']:>10.2f}{product['stock']:>8}   {product['history']}")
+
+
+def get_number(prompt, number_type):
+    """Keep asking until the user types a valid number."""
+    while True:
+        try:
+            return number_type(input(prompt))
+        except ValueError:
+            print("Please enter a valid number.")
