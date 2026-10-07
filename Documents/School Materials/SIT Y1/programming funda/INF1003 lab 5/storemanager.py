@@ -9,3 +9,9 @@ def load_inventory():
         with open(FILENAME, 'r') as file:
             return json.load(file)
     return []
+
+def save_inventory(inventory):
+    """Save the inventory to the inventory.json file."""
+    with open(FILENAME, 'w') as file:
+        json.dump(inventory, file, indent=4)
+        print("Inventory saved successfully to", FILENAME)
