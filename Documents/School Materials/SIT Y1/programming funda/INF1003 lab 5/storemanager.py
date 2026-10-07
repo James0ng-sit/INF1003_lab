@@ -62,3 +62,17 @@ def display_all(inventory):
     print("-" * 55)
     for product in inventory:
         print(f"{product['name']:<15}{product['price']:>10.2f}{product['stock']:>8}   {product['history']}")
+
+def add_product(inventory, name, price, stock):
+    """Add a new product (a dictionary) to the inventory list."""
+    if search_product(inventory, name) is not None:
+        print("That product already exists. Use Update Stock instead.")
+        return
+    product = {
+        "name": name,
+        "price": price,
+        "stock": stock,
+        "history": [stock],  # every stock change is recorded here
+    }
+    inventory.append(product)
+    print(f"Added {name}.")
