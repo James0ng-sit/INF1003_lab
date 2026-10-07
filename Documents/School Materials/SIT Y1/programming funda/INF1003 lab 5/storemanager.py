@@ -119,3 +119,48 @@ def show_menu():
     print("4. Search product")
     print("5. Save")
     print("6. Exit")
+    
+def main():
+    inventory = load_inventory()
+
+    while True:
+        show_menu()
+        choice = input("Choose an option (1-6): ").strip()
+
+        if choice == "1":
+            display_all(inventory)
+
+        elif choice == "2":
+            name = input("Product name: ").strip()
+            price = get_number("Price: ", float)
+            stock = get_number("Starting stock: ", int)
+            add_product(inventory, name, price, stock)
+
+        elif choice == "3":
+            name = input("Product name: ").strip()
+            change = get_number("Change in stock (e.g. 10 or -3): ", int)
+            update_stock(inventory, name, change)
+
+        elif choice == "4":
+            name = input("Product name to search: ").strip()
+            product = search_product(inventory, name)
+            if product is None:
+                print("Product not found.")
+            else:
+                print(product)
+
+        elif choice == "5":
+            save_inventory(inventory)
+
+        elif choice == "6":
+            save_choice = input("Save before exiting? (y/n): ").strip().lower()
+            if save_choice == "y":
+                save_inventory(inventory)
+            print("Goodbye!")
+            break
+
+        else:
+            print("Invalid choice. Please enter a number from 1 to 6.")
+
+
+main()
