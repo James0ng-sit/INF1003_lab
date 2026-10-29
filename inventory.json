@@ -3,9 +3,10 @@
         "product_id": "P001",
         "name": "Laptop",
         "price": 1200.0,
-        "stock": 13,
+        "stock": 11,
         "history": [
             15,
+            -2,
             -2
         ]
     },
@@ -16,6 +17,15 @@
         "stock": 200,
         "history": [
             200
+        ]
+    },
+    {
+        "product_id": "P002",
+        "name": "Monitor",
+        "price": 50.0,
+        "stock": 30,
+        "history": [
+            30
         ]
     }
 ]

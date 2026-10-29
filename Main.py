@@ -13,12 +13,12 @@ def load_inventory():
         for item in data:
             product = Product(
                 item["product_id"],
-                item["Name"],
+                item["name"],
                 item["price"],
                 item["stock"],
                 item["history"]
             )
-            inventory.add.product(product)
+            inventory.add_product(product)
     return inventory
 
 def save_inventory(inventory):
