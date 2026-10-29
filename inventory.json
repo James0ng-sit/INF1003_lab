@@ -1,27 +1,21 @@
 [
     {
-        "name": "apple",
-        "price": 2.0,
-        "stock": 8,
+        "product_id": "P001",
+        "name": "Laptop",
+        "price": 1200.0,
+        "stock": 13,
         "history": [
-            10,
+            15,
             -2
         ]
     },
     {
-        "name": "milk",
-        "price": 5.0,
-        "stock": 50,
+        "product_id": "M001",
+        "name": "Mouse",
+        "price": 5.5,
+        "stock": 200,
         "history": [
-            50
-        ]
-    },
-    {
-        "name": "orange",
-        "price": 2.0,
-        "stock": 20,
-        "history": [
-            20
+            200
         ]
     }
 ]
