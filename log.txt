@@ -1,0 +1,35 @@
+commit 96ae48256cae7e8767e93c8c5f391ce040412a35
+Author: James <bakajames@hotmail.com>
+Date:   Thu Oct 29 20:41:28 2026 +0800
+
+    Fixed load bugs, updated Dockerfile, added screenshots and UML
+
+commit 0b58eff4407afd88b5acf670cddf5e1281e980e0
+Author: James <bakajames@hotmail.com>
+Date:   Thu Oct 29 20:22:27 2026 +0800
+
+    Refactored inventory system using OOP
+
+commit 7d98e5596f594733f4cb1afc092ab174a161aa30
+Author: James <bakajames@hotmail.com>
+Date:   Thu Oct 29 19:59:12 2026 +0800
+
+    Added history, name search and export to Product and Inventory
+
+commit 1fa2806ebbd35c6e19d85db6e4b233a5e3220e16
+Author: James <bakajames@hotmail.com>
+Date:   Thu Oct 29 19:54:48 2026 +0800
+
+    Created Inventory class with add, display and search
+
+commit ee5101748cd49830d1cdcdfbbb26ea90dd19f293
+Author: James <bakajames@hotmail.com>
+Date:   Thu Oct 29 19:46:30 2026 +0800
+
+    Added gitignore
+
+commit c0eaba49ac060d5a72427cb6f0998c408c011fcc
+Author: James <bakajames@hotmail.com>
+Date:   Thu Oct 29 19:44:58 2026 +0800
+
+    Created Product class
