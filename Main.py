@@ -3,6 +3,7 @@ import os
 from Product import Product
 from Inventory import Inventory
 from PhysicalProduct import PhysicalProduct
+from DigitalProduct import DigitalProduct
 
 FILENAME = "inventory.json"
 
@@ -99,6 +100,10 @@ def main():
 guitar =  PhysicalProduct ("G001", "Guitar", 50, 10, 5)
 
 guitar.display_information()
+
+Mac_OS =  DigitalProduct ("D001", "Mac OS", 100, 100, 4500)
+
+Mac_OS.display_information()
 
 if __name__ == "__main__":
     main()
