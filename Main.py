@@ -113,6 +113,7 @@ print("\n===== DIGITAL PRODUCTS =====")
 Mac_OS =  DigitalProduct ("D001", "Mac OS", 100, 100, 4500)
 Mac_OS.display_information()
 print(Mac_OS.get_fulfilment_info())
+print(f"Mac OS Download Cost: ${Mac_OS.calculate_download_cost():.2f}")
 
 if __name__ == "__main__":
     #main()
