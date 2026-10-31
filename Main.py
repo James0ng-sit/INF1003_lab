@@ -2,6 +2,7 @@ import json
 import os
 from Product import Product
 from Inventory import Inventory
+from PhysicalProduct import PhysicalProduct
 
 FILENAME = "inventory.json"
 
@@ -95,6 +96,9 @@ def main():
         else:
             print("Invalid choice. Please enter a number from 1 to 6.")
 
+guitar =  PhysicalProduct ("G001", "Guitar", 50, 10, 5)
+
+guitar.display_information()
 
 if __name__ == "__main__":
     main()
