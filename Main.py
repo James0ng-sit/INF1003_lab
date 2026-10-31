@@ -75,7 +75,19 @@ def main():
             else:
                 price = get_number("Price: ", float)
                 stock = get_number("Starting stock: ", int)
-                inventory.add_product(Product(product_id, name, price, stock))
+                product_type = input("Type (physical/digital): ").strip().lower()
+                if product_type == "physical":
+                    weight = get_number("Weight (kg): ", float)
+                    inventory.add_product(PhysicalProduct(product_id, name, price, stock, weight))
+                    print(f"Added {name}")
+
+                elif product_type == "digital":
+                    download_size = get_number("download size (MB): ", float)
+                    inventory.add_product(DigitalProduct(product_id, name, price, stock, download_size))
+                    print(f"Added {name}")
+                else:
+                    print("Invalid type. Product not added")
+                        
                 print(f"Added {name}.")
 
         elif choice == "3":

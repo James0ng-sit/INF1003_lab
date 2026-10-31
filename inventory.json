@@ -33,5 +33,17 @@
         ],
         "type": "physical",
         "weight": 10
+    },
+    {
+        "product_id": "D002",
+        "name": "Window OS",
+        "price": 30.0,
+        "stock": 45,
+        "history": [
+            50,
+            -5
+        ],
+        "type": "digital",
+        "download_size": 2000.0
     }
 ]
