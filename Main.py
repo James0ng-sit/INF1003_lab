@@ -98,8 +98,9 @@ def main():
             print("Invalid choice. Please enter a number from 1 to 6.")
 
 guitar =  PhysicalProduct ("G001", "Guitar", 50, 10, 5)
-
+drum = PhysicalProduct ("G002", "Drum", 100, 10, 100)
 guitar.display_information()
+drum.display_information()
 
 Mac_OS =  DigitalProduct ("D001", "Mac OS", 100, 100, 4500)
 
@@ -108,4 +109,6 @@ Mac_OS.display_information()
 if __name__ == "__main__":
     #main()
     print(guitar.get_fulfilment_info())
+    print(f"Guitar Shipping Cost: ${guitar.calculate_shipping_cost():.2f}")
+    print(f"Drum Shipping Cost: ${drum.calculate_shipping_cost():.2f}")
     print(Mac_OS.get_fulfilment_info())

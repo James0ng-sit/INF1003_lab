@@ -1,7 +1,8 @@
 from Product import Product
+from CanbeShipped import CanbeShipped
 
 
-class PhysicalProduct(Product):
+class PhysicalProduct(Product, CanbeShipped):
     def __init__(self, product_id, name, price, stock, weight, history=None):
         super().__init__ (product_id, name, price, stock, history)
         self.__weight = weight
@@ -12,5 +13,10 @@ class PhysicalProduct(Product):
     
     def get_fulfilment_info(self):
         return "This product requires physical shipping"
+
+    def calculate_shipping_cost(self):
+        return self.__weight * 0.5
+
+
 
     
