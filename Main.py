@@ -106,4 +106,6 @@ Mac_OS =  DigitalProduct ("D001", "Mac OS", 100, 100, 4500)
 Mac_OS.display_information()
 
 if __name__ == "__main__":
-    main()
+    #main()
+    print(guitar.get_fulfilment_info())
+    print(Mac_OS.get_fulfilment_info())
