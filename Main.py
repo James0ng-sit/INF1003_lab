@@ -13,13 +13,24 @@ def load_inventory():
         with open(FILENAME, "r") as file:
             data = json.load(file)
         for item in data:
-            product = Product(
-                item["product_id"],
-                item["name"],
-                item["price"],
-                item["stock"],
-                item["history"]
-            )
+            if item["type"] == "physical":
+                product = PhysicalProduct(
+                    item["product_id"],
+                    item["name"],
+                    item["price"],
+                    item["stock"],
+                    item["weight"],
+                    item["history"]
+                )
+            elif item["type"] == "digital":
+                product = DigitalProduct(
+                    item["product_id"],
+                    item["name"],
+                    item["price"],
+                    item["stock"],
+                    item["download_size"],
+                    item["history"] 
+                )
             inventory.add_product(product)
     return inventory
 
@@ -116,5 +127,5 @@ print(Mac_OS.get_fulfilment_info())
 print(f"Mac OS Download Cost: ${Mac_OS.calculate_download_cost():.2f}")
 
 if __name__ == "__main__":
-    #main()
+    main()
     pass

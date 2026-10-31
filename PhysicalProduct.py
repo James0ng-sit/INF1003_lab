@@ -17,6 +17,12 @@ class PhysicalProduct(Product, CanbeShipped):
     def calculate_shipping_cost(self):
         return self.__weight * 0.5
 
+    def to_dict(self):
+         storage = super().to_dict()
+         storage["type"] = "physical"
+         storage["weight"] = self.__weight
+         return storage
+
 
 
     

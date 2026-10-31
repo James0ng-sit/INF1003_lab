@@ -8,7 +8,9 @@
             15,
             -2,
             -2
-        ]
+        ],
+        "type": "physical",
+        "weight": 5
     },
     {
         "product_id": "M001",
@@ -17,7 +19,9 @@
         "stock": 200,
         "history": [
             200
-        ]
+        ],
+        "type": "physical",
+        "weight": 0.1
     },
     {
         "product_id": "P002",
@@ -26,6 +30,8 @@
         "stock": 30,
         "history": [
             30
-        ]
+        ],
+        "type": "physical",
+        "weight": 10
     }
 ]

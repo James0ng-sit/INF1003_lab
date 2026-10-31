@@ -16,4 +16,11 @@ class DigitalProduct(Product, CanBeDownloaded):
 
     def calculate_download_cost(self):
         return self.__download_size * 0.01
+    
+    def to_dict(self):
+         storage = super().to_dict()
+         storage["type"] = "digital"
+         storage["download_size"] = self.__download_size
+         return storage
+
         
