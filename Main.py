@@ -118,14 +118,17 @@ def main():
                 print("Product not found.")
             else:
                 change = get_number("How many units to be delivered (e.g. 10 or 1): ", int)
-                if product.update_stock(-change):
-                    print(product.get_fulfilment_info())
-                    if isinstance(product, CanbeShipped):
-                        cost = product.calculate_shipping_cost() * change
-                        print(f"Shipping cost for {change} units of {product.get_name()} is ${cost:.2f}.")
-                    elif isinstance(product, CanBeDownloaded):
-                        cost = product.calculate_download_cost() * change
-                        print(f"Download cost for {change} units of {product.get_name()} is ${cost:.2f}.")
+                if change <= 0:
+                    print("Please enter a positive number for delivery.")
+                else:
+                    if product.update_stock(-change):
+                        print(product.get_fulfilment_info())
+                        if isinstance(product, CanbeShipped):
+                            cost = product.calculate_shipping_cost() * change
+                            print(f"Shipping cost for {change} units of {product.get_name()} is ${cost:.2f}.")
+                        elif isinstance(product, CanBeDownloaded):
+                            cost = product.calculate_download_cost() * change
+                            print(f"Download cost for {change} units of {product.get_name()} is ${cost:.2f}.")
 
         elif choice == "7":
             save_choice = input("Save before exiting? (y/n): ").strip().lower()
