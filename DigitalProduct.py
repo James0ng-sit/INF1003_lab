@@ -2,6 +2,7 @@ from Product import Product
 from CanBeDownloaded import CanBeDownloaded
 
 class DigitalProduct(Product, CanBeDownloaded):
+    DOWNLOAD_RATE = 0.01  # Download cost per MB
 
     def __init__(self, product_id, name, price, stock, download_size, history=None):
         super().__init__ (product_id, name, price, stock, history)
@@ -16,7 +17,7 @@ class DigitalProduct(Product, CanBeDownloaded):
         return "This product is delivered digitally"
 
     def calculate_download_cost(self):
-        return self.__download_size * 0.01
+        return self.__download_size * DigitalProduct.DOWNLOAD_RATE
     
     def to_dict(self):
          storage = super().to_dict()

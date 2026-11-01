@@ -58,10 +58,17 @@ def show_menu():
     print("5. Save")
     print("6. Deliver Order")
     print("7. Exit")
+    print("\n===== DELIVERY & DOWNLOAD RATE SUMMARY =====")
+    print(f"Shipping rate: ${PhysicalProduct.SHIPPING_RATE:.2f} per kg")
+    print(f"Download rate: ${DigitalProduct.DOWNLOAD_RATE:.2f} per MB")
 
 
 def main():
     inventory = load_inventory()
+    total_shipped_units = 0
+    total_shipping_cost = 0
+    total_downloaded_units = 0
+    total_download_cost = 0
 
     while True:
         show_menu()
@@ -126,15 +133,23 @@ def main():
                         if isinstance(product, CanbeShipped):
                             cost = product.calculate_shipping_cost() * change
                             print(f"Shipping cost for {change} units of {product.get_name()} is ${cost:.2f}.")
+                            total_shipped_units += change
+                            total_shipping_cost += cost
                         elif isinstance(product, CanBeDownloaded):
                             cost = product.calculate_download_cost() * change
                             print(f"Download cost for {change} units of {product.get_name()} is ${cost:.2f}.")
+                            total_downloaded_units += change
+                            total_download_cost += cost
 
         elif choice == "7":
             save_choice = input("Save before exiting? (y/n): ").strip().lower()
             if save_choice == "y":
                 save_inventory(inventory)
-            print("Goodbye!")
+            print("\n===== DELIVERY SUMMARY =====")
+            print(f"Total shipped units: {total_shipped_units}")
+            print(f"Total shipping cost: ${total_shipping_cost:.2f}")
+            print(f"Total downloaded units: {total_downloaded_units}")
+            print(f"Total download cost: ${total_download_cost:.2f}")
             break
 
         else:

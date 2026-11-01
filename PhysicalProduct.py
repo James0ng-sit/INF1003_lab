@@ -3,6 +3,7 @@ from CanbeShipped import CanbeShipped
 
 
 class PhysicalProduct(Product, CanbeShipped):
+    SHIPPING_RATE = 0.5  # Shipping cost per kg
     def __init__(self, product_id, name, price, stock, weight, history=None):
         super().__init__ (product_id, name, price, stock, history)
         self.__weight = weight
@@ -16,7 +17,7 @@ class PhysicalProduct(Product, CanbeShipped):
         return "This product requires physical shipping"
 
     def calculate_shipping_cost(self):
-        return self.__weight * 0.5
+        return self.__weight * PhysicalProduct.SHIPPING_RATE 
 
     def to_dict(self):
          storage = super().to_dict()
