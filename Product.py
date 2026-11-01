@@ -12,10 +12,12 @@ class Product(ABC):
     def update_stock(self, quantity):
         if self.__stock + quantity < 0:
             print("Not enough stock. Current stock is", self.__stock)
+            return False
         else:
             self.__stock = self.__stock + quantity
             self.__history.append(quantity)
             print(f"{self.__name} stock is now {self.__stock}.")
+            return True
 
     def display_information(self):
         print(f"{self.__name:<15}{self.__price:>10.2f}{self.__stock:>8}   {self.__history}")

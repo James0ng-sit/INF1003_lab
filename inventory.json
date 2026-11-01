@@ -3,9 +3,10 @@
         "product_id": "P001",
         "name": "Laptop",
         "price": 1200.0,
-        "stock": 11,
+        "stock": 9,
         "history": [
             15,
+            -2,
             -2,
             -2
         ],

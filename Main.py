@@ -1,5 +1,7 @@
 import json
 import os
+from CanBeDownloaded import CanBeDownloaded
+from CanbeShipped import CanbeShipped
 from Product import Product
 from Inventory import Inventory
 from PhysicalProduct import PhysicalProduct
@@ -54,7 +56,8 @@ def show_menu():
     print("3. Update stock")
     print("4. Search product")
     print("5. Save")
-    print("6. Exit")
+    print("6. Deliver Order")
+    print("7. Exit")
 
 
 def main():
@@ -62,7 +65,7 @@ def main():
 
     while True:
         show_menu()
-        choice = input("Choose an option (1-6): ").strip()
+        choice = input("Choose an option (1-7): ").strip()
 
         if choice == "1":
             inventory.display_all()
@@ -87,8 +90,6 @@ def main():
                     print(f"Added {name}")
                 else:
                     print("Invalid type. Product not added")
-                        
-                print(f"Added {name}.")
 
         elif choice == "3":
             name = input("Product name: ").strip()
@@ -111,6 +112,22 @@ def main():
             save_inventory(inventory)
 
         elif choice == "6":
+            name = input("Product name: ").strip()
+            product = inventory.search_product(name)
+            if product is None:
+                print("Product not found.")
+            else:
+                change = get_number("How many units to be delivered (e.g. 10 or 1): ", int)
+                if product.update_stock(-change):
+                    print(product.get_fulfilment_info())
+                    if isinstance(product, CanbeShipped):
+                        cost = product.calculate_shipping_cost() * change
+                        print(f"Shipping cost for {change} units of {product.get_name()} is ${cost:.2f}.")
+                    elif isinstance(product, CanBeDownloaded):
+                        cost = product.calculate_download_cost() * change
+                        print(f"Download cost for {change} units of {product.get_name()} is ${cost:.2f}.")
+
+        elif choice == "7":
             save_choice = input("Save before exiting? (y/n): ").strip().lower()
             if save_choice == "y":
                 save_inventory(inventory)
@@ -118,7 +135,7 @@ def main():
             break
 
         else:
-            print("Invalid choice. Please enter a number from 1 to 6.")
+            print("Invalid choice. Please enter a number from 1 to 7.")
 
 if __name__ == "__main__":
     main()
