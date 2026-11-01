@@ -10,6 +10,7 @@ class PhysicalProduct(Product, CanbeShipped):
     def display_information(self):
         super().display_information()
         print(f"Weight: {self.__weight} kg")
+        print(f"Shipping cost: ${self.calculate_shipping_cost():.2f}")
     
     def get_fulfilment_info(self):
         return "This product requires physical shipping"

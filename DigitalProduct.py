@@ -10,6 +10,7 @@ class DigitalProduct(Product, CanBeDownloaded):
     def display_information(self):
         super().display_information()
         print(f"download size: {self.__download_size} MB")
+        print(f"Download cost: ${self.calculate_download_cost():.2f}")
 
     def get_fulfilment_info(self):
         return "This product is delivered digitally"
