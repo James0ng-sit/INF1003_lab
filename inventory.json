@@ -47,5 +47,17 @@
         ],
         "type": "digital",
         "download_size": 2000.0
+    },
+    {
+        "product_id": "A001",
+        "name": "Android",
+        "price": 100.0,
+        "stock": 7,
+        "history": [
+            10,
+            -3
+        ],
+        "type": "digital",
+        "download_size": 200.0
     }
 ]
