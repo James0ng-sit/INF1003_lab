@@ -1,5 +1,6 @@
 from PhysicalProduct import PhysicalProduct
 from DigitalProduct import DigitalProduct
+from Product import Product
 
 
 print("===== PHYSICAL PRODUCTS =====")
@@ -17,3 +18,10 @@ print("\n===== DIGITAL PRODUCTS =====")
 Mac_OS =  DigitalProduct ("D001", "Mac OS", 100, 100, 4500)
 Mac_OS.display_information()
 print(Mac_OS.get_fulfilment_info())
+
+print("\n===== ABSTRACT CLASS TEST =====")
+try:
+    product = Product("P001", "Abstract Product", 0, 0)
+    print("Product class instantiated successfully.")
+except TypeError as e:
+    print("Error:", e)
