@@ -2,6 +2,7 @@ from PhysicalProduct import PhysicalProduct
 from DigitalProduct import DigitalProduct
 from Product import Product
 from Supplier import Supplier
+from Inventory import Inventory
 
 supplier = Supplier("S001", "Yamaha", "sales@yamaha.com")
 
@@ -36,3 +37,18 @@ del supplier
 print("\n--- after del supplier")
 guitar.get_supplier().display_information()
 Mac_OS.get_supplier().display_information()
+
+print("\n===== AGGREGATION TEST =====")
+inventory_a = Inventory ()
+inventory_b = Inventory ()
+print("\n--- inventory_a after adding drum ---")
+inventory_a.add_product(drum)
+inventory_a.display_all()
+removed = inventory_a.remove_product("G002")
+print("\n--- inventory_a after removing Drum")
+inventory_a.display_all()
+print("\n--- Drum ---")
+removed.display_information()
+print("\n--- inventory_b after adding drum ---")
+inventory_b.add_product(removed)
+inventory_b.display_all()
