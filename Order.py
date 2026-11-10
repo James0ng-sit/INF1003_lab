@@ -21,3 +21,9 @@ class Order:
         for order_line in self.__order_line:
             order_line.display_information()
         print(f"Total: ${self.calculate_total():.2f}")
+
+    def remove_order_line(self, index: int) -> None:
+        if index < 0 or index >= len(self.__order_line):
+            print("Invalid line Number")
+        else:
+            self.__order_line.pop(index)
