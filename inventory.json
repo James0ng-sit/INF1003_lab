@@ -4,60 +4,83 @@
         "name": "Laptop",
         "price": 1200.0,
         "stock": 7,
-        "history": [
-            15,
-            -2,
-            -2,
-            -2,
-            -2
-        ],
+        "history": [15, -2, -2, -2, -2],
         "type": "physical",
-        "weight": 5
+        "weight": 5,
+        "supplier": {
+            "supplier_id": "S001",
+            "name": "TechSupply",
+            "contact_email": "sales@techsupply.com"
+        }
     },
     {
         "product_id": "M001",
         "name": "Mouse",
         "price": 5.5,
         "stock": 200,
-        "history": [
-            200
-        ],
+        "history": [200],
         "type": "physical",
-        "weight": 0.1
+        "weight": 0.1,
+        "supplier": {
+            "supplier_id": "S001",
+            "name": "TechSupply",
+            "contact_email": "sales@techsupply.com"
+        }
     },
     {
         "product_id": "P002",
         "name": "Monitor",
         "price": 50.0,
         "stock": 30,
-        "history": [
-            30
-        ],
+        "history": [30],
         "type": "physical",
-        "weight": 10
+        "weight": 10,
+        "supplier": {
+            "supplier_id": "S001",
+            "name": "TechSupply",
+            "contact_email": "sales@techsupply.com"
+        }
+    },
+    {
+        "product_id": "K002",
+        "name": "Key",
+        "price": 1.0,
+        "stock": 100,
+        "history": [100],
+        "type": "physical",
+        "weight": 0.1,
+        "supplier": {
+            "supplier_id": "K002",
+            "name": "KeyMasters",
+            "contact_email": "hello@keymasters.com"
+        }
     },
     {
         "product_id": "D002",
         "name": "Window OS",
         "price": 30.0,
         "stock": 45,
-        "history": [
-            50,
-            -5
-        ],
+        "history": [50, -5],
         "type": "digital",
-        "download_size": 2000.0
+        "download_size": 2000.0,
+        "supplier": {
+            "supplier_id": "S001",
+            "name": "TechSupply",
+            "contact_email": "sales@techsupply.com"
+        }
     },
     {
         "product_id": "A001",
         "name": "Android",
         "price": 100.0,
         "stock": 7,
-        "history": [
-            10,
-            -3
-        ],
+        "history": [10, -3],
         "type": "digital",
-        "download_size": 200.0
+        "download_size": 200.0,
+        "supplier": {
+            "supplier_id": "S001",
+            "name": "TechSupply",
+            "contact_email": "sales@techsupply.com"
+        }
     }
 ]

@@ -6,6 +6,7 @@ from Product import Product
 from Inventory import Inventory
 from PhysicalProduct import PhysicalProduct
 from DigitalProduct import DigitalProduct
+from Supplier import Supplier
 
 FILENAME = "inventory.json"
 
@@ -15,12 +16,19 @@ def load_inventory():
         with open(FILENAME, "r") as file:
             data = json.load(file)
         for item in data:
+            supplier_data = item["supplier"]
+            supplier = Supplier(
+                supplier_data["supplier_id"],
+                supplier_data["name"],
+                supplier_data["contact_email"]
+            )
             if item["type"] == "physical":
                 product = PhysicalProduct(
                     item["product_id"],
                     item["name"],
                     item["price"],
                     item["stock"],
+                    supplier,
                     item["weight"],
                     item["history"]
                 )
@@ -30,6 +38,7 @@ def load_inventory():
                     item["name"],
                     item["price"],
                     item["stock"],
+                    supplier,
                     item["download_size"],
                     item["history"] 
                 )
@@ -85,15 +94,19 @@ def main():
             else:
                 price = get_number("Price: ", float)
                 stock = get_number("Starting stock: ", int)
+                supplier_id = input("Supplier ID: ").strip() 
+                supplier_name = input("Supplier Name: ").strip()
+                supplier_email = input("Supplier Email: ").strip()
+                supplier = Supplier(supplier_id,supplier_name, supplier_email)
                 product_type = input("Type (physical/digital): ").strip().lower()
                 if product_type == "physical":
                     weight = get_number("Weight (kg): ", float)
-                    inventory.add_product(PhysicalProduct(product_id, name, price, stock, weight))
+                    inventory.add_product(PhysicalProduct(product_id, name, price, stock, supplier, weight))
                     print(f"Added {name}")
 
                 elif product_type == "digital":
                     download_size = get_number("download size (MB): ", float)
-                    inventory.add_product(DigitalProduct(product_id, name, price, stock, download_size))
+                    inventory.add_product(DigitalProduct(product_id, name, price, stock, supplier, download_size))
                     print(f"Added {name}")
                 else:
                     print("Invalid type. Product not added")

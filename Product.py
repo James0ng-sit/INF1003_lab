@@ -42,7 +42,8 @@ class Product(ABC):
             "name": self.__name,
             "price": self.__price,
             "stock": self.__stock,
-            "history": self.__history
+            "history": self.__history,
+            "supplier": self.__supplier.to_dict()
         }
     @abstractmethod  
     def get_fulfilment_info(self) -> str:   
