@@ -27,8 +27,16 @@ class Inventory:
     def find_product(self, product_id: str) -> Product | None:
         for product in self.__products:
             if product.get_product_id() == product_id:
-            return product
+             return product
         return None
+
+    def remove_product(self, product_id: str) -> Product | None:
+        product = self.find_product(product_id)
+        if product is None:
+            return None
+        self.__products.remove(product)
+        return product
+        
 
     def to_list(self) -> list[dict]:
         return [product.to_dict() for product in self.__products]
