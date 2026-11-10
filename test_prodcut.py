@@ -18,7 +18,7 @@ print(drum.get_fulfilment_info())
 
 
 print("\n===== DIGITAL PRODUCTS =====")
-Mac_OS =  DigitalProduct ("D001", "Mac OS", 100, 100, supplier, 4500)
+Mac_OS = DigitalProduct ("D001", "Mac OS", 100, 100, supplier, 4500)
 Mac_OS.display_information()
 print(Mac_OS.get_fulfilment_info())
 
