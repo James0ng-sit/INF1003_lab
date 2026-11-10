@@ -40,3 +40,6 @@ class Inventory:
 
     def to_list(self) -> list[dict]:
         return [product.to_dict() for product in self.__products]
+
+    def get_products(self) -> list[Product]:
+        return list(self.__products)

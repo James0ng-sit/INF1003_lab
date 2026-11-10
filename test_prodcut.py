@@ -86,5 +86,11 @@ def show_product_details(product: Product) -> None:
 show_product_details(guitar)
 show_product_details(Mac_OS)
 
+print("\n===== POLYMORPHISM TEST =====")
+mixed_inventory = Inventory()
+mixed_inventory.add_product(guitar)
+mixed_inventory.add_product(Mac_OS)
 
-
+for product in mixed_inventory.get_products():
+    product.display_information()
+    print(product.get_fulfilment_info())
