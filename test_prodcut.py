@@ -78,4 +78,13 @@ order1.remove_order_line(0)
 order1.display_information()
 order1.remove_order_line(5)
 
+print("\n===== LSP TEST =====")
+def show_product_details(product: Product) -> None:
+    product.display_information()
+    print(product.get_fulfilment_info())
+
+show_product_details(guitar)
+show_product_details(Mac_OS)
+
+
 
