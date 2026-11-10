@@ -10,3 +10,7 @@ class OrderLine:
 
     def display_information(self) -> None:
         print(f"{self.__product.get_name(): <15} x {self.__quantity: <4} ${self.calculate_subtotal():.2f}")
+
+    def get_product(self) -> Product:
+        return self.__product
+

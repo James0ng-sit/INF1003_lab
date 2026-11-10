@@ -27,3 +27,6 @@ class Order:
             print("Invalid line Number")
         else:
             self.__order_line.pop(index)
+
+    def get_order_lines(self) -> list[OrderLine]:
+        return list(self.__order_line)

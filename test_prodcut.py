@@ -3,6 +3,7 @@ from DigitalProduct import DigitalProduct
 from Product import Product
 from Supplier import Supplier
 from Inventory import Inventory
+from Order import Order
 
 supplier = Supplier("S001", "Yamaha", "sales@yamaha.com")
 
@@ -52,3 +53,29 @@ removed.display_information()
 print("\n--- inventory_b after adding drum ---")
 inventory_b.add_product(removed)
 inventory_b.display_all()
+
+print("\n===== COMPOSITION TEST =====")
+order1 = Order("O001")
+order1.add_order_line(guitar, 2)
+order1.add_order_line(drum, 1)
+order1.display_information()
+print()
+order2 = Order("O002")
+order2.add_order_line(guitar, 1)
+order2.display_information()
+print()
+
+print("\n--- Prediction 3 check ---")
+print("Total OrderLines:", len(order1.get_order_lines()) + len(order2.get_order_lines()))
+
+line_a = order1.get_order_lines()[0]
+line_b = order2.get_order_lines()[0]
+print("Same OrderLine?", line_a is line_b)
+print("Same guitar?", line_a.get_product() is line_b.get_product())
+
+print("\n--- Remove line 0 from O001 ---")
+order1.remove_order_line(0)
+order1.display_information()
+order1.remove_order_line(5)
+
+
