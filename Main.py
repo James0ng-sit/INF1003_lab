@@ -10,7 +10,7 @@ from Supplier import Supplier
 
 FILENAME = "inventory.json"
 
-def load_inventory():
+def load_inventory() -> inventory:
     inventory = Inventory()
     if os.path.exists(FILENAME):
         with open(FILENAME, "r") as file:
@@ -45,20 +45,20 @@ def load_inventory():
             inventory.add_product(product)
     return inventory
 
-def save_inventory(inventory):
+def save_inventory(inventory: Inventory) -> None:
     with open(FILENAME, "w") as file:
         json.dump(inventory.to_list(), file, indent=4)
     print("Inventory saved successfully to", FILENAME)
 
 
-def get_number(prompt, number_type):
+def get_number(prompt:str, number_type) -> int | float:
     while True:
         try:
             return number_type(input(prompt))
         except ValueError:
             print("Please enter a valid number.")
 
-def show_menu():
+def show_menu() -> None:
     print("\n===== INVENTORY MENU =====")
     print("1. Display all products")
     print("2. Add product")
@@ -72,7 +72,7 @@ def show_menu():
     print(f"Download rate: ${DigitalProduct.DOWNLOAD_RATE:.2f} per MB")
 
 
-def main():
+def main() -> None:
     inventory = load_inventory()
     total_shipped_units = 0
     total_shipping_cost = 0
