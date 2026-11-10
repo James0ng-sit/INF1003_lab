@@ -30,6 +30,9 @@ class Product(ABC):
     def get_name(self) -> str:
         return self.__name
 
+    def get_price(self) -> float:
+        return self._get_price
+
     def get_supplier(self) -> Supplier:
         return self.__supplier
 
