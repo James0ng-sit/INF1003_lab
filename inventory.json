@@ -4,83 +4,117 @@
         "name": "Laptop",
         "price": 1200.0,
         "stock": 7,
-        "history": [15, -2, -2, -2, -2],
-        "type": "physical",
-        "weight": 5,
+        "history": [
+            15,
+            -2,
+            -2,
+            -2,
+            -2
+        ],
         "supplier": {
             "supplier_id": "S001",
             "name": "TechSupply",
             "contact_email": "sales@techsupply.com"
-        }
+        },
+        "type": "physical",
+        "weight": 5
     },
     {
         "product_id": "M001",
         "name": "Mouse",
         "price": 5.5,
         "stock": 200,
-        "history": [200],
-        "type": "physical",
-        "weight": 0.1,
+        "history": [
+            200
+        ],
         "supplier": {
             "supplier_id": "S001",
             "name": "TechSupply",
             "contact_email": "sales@techsupply.com"
-        }
+        },
+        "type": "physical",
+        "weight": 0.1
     },
     {
         "product_id": "P002",
         "name": "Monitor",
         "price": 50.0,
         "stock": 30,
-        "history": [30],
-        "type": "physical",
-        "weight": 10,
+        "history": [
+            30
+        ],
         "supplier": {
             "supplier_id": "S001",
             "name": "TechSupply",
             "contact_email": "sales@techsupply.com"
-        }
+        },
+        "type": "physical",
+        "weight": 10
     },
     {
         "product_id": "K002",
         "name": "Key",
         "price": 1.0,
         "stock": 100,
-        "history": [100],
-        "type": "physical",
-        "weight": 0.1,
+        "history": [
+            100
+        ],
         "supplier": {
             "supplier_id": "K002",
             "name": "KeyMasters",
             "contact_email": "hello@keymasters.com"
-        }
+        },
+        "type": "physical",
+        "weight": 0.1
     },
     {
         "product_id": "D002",
         "name": "Window OS",
         "price": 30.0,
         "stock": 45,
-        "history": [50, -5],
-        "type": "digital",
-        "download_size": 2000.0,
+        "history": [
+            50,
+            -5
+        ],
         "supplier": {
             "supplier_id": "S001",
             "name": "TechSupply",
             "contact_email": "sales@techsupply.com"
-        }
+        },
+        "type": "digital",
+        "download_size": 2000.0
     },
     {
         "product_id": "A001",
         "name": "Android",
         "price": 100.0,
         "stock": 7,
-        "history": [10, -3],
-        "type": "digital",
-        "download_size": 200.0,
+        "history": [
+            10,
+            -3
+        ],
         "supplier": {
             "supplier_id": "S001",
             "name": "TechSupply",
             "contact_email": "sales@techsupply.com"
-        }
+        },
+        "type": "digital",
+        "download_size": 200.0
+    },
+    {
+        "product_id": "C001",
+        "name": "Coffee",
+        "price": 5.0,
+        "stock": 100,
+        "history": [
+            100
+        ],
+        "supplier": {
+            "supplier_id": "Coffemaker",
+            "name": "Coofeermaker1",
+            "contact_email": "Coffee@coffeeemaker.com"
+        },
+        "type": "physical",
+        "weight": 0.2
     }
 ]
