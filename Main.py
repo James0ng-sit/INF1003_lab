@@ -10,7 +10,7 @@ from Supplier import Supplier
 
 FILENAME = "inventory.json"
 
-def load_inventory() -> inventory:
+def load_inventory() -> Inventory:
     inventory = Inventory()
     if os.path.exists(FILENAME):
         with open(FILENAME, "r") as file:
