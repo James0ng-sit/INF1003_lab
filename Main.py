@@ -37,7 +37,7 @@ def load_inventory() -> Inventory:
                 extra,
                 item["history"]
             )
-        inventory.add_product(product)
+            inventory.add_product(product)
     return inventory
 
 def save_inventory(inventory: Inventory) -> None:
@@ -165,4 +165,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-    pass
