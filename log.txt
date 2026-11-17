@@ -1,3 +1,207 @@
+commit 541bec722593282daddc7e1bab84af55950b2058
+Author: James <bakajames@hotmail.com>
+Date:   Wed Nov 11 11:28:12 2026 +0800
+
+    add product via Docker run
+
+commit 430990e41c262bb220e82a36099dd208f24523f9
+Author: James <bakajames@hotmail.com>
+Date:   Wed Nov 11 11:22:24 2026 +0800
+
+    fix return type, Docker run
+
+commit 3ed97c8287484e2b3ab9b327f544c20a62eb1a7c
+Author: James <bakajames@hotmail.com>
+Date:   Wed Nov 11 11:19:52 2026 +0800
+
+    add Lab 8 UML diagram
+
+commit f06d873880ae5da778802cff88e5261e28453edc
+Author: James <bakajames@hotmail.com>
+Date:   Tue Nov 10 23:03:49 2026 +0800
+
+    add type hints to Main.py
+
+commit bbd59219f8c4be9ded0df5ee9411c40bde984651
+Author: James <bakajames@hotmail.com>
+Date:   Tue Nov 10 22:54:42 2026 +0800
+
+    save and load suppliers, ask for supplier when adding product
+
+commit 2a37855418491c405fe1836294d451b39accf6b1
+Author: James <bakajames@hotmail.com>
+Date:   Tue Nov 10 22:26:08 2026 +0800
+
+    add polymorphism test and Inventory.get_products
+
+commit 75a4510e6c697597b5be668c1329ef0f28331d36
+Author: James <bakajames@hotmail.com>
+Date:   Tue Nov 10 22:02:43 2026 +0800
+
+    add LSP substitution test
+
+commit 846f68c6db705499946a5090e9d4e8d3d68f35b7
+Author: James <bakajames@hotmail.com>
+Date:   Tue Nov 10 21:56:23 2026 +0800
+
+    add composition test for Order and OrderLine
+
+commit 30d68f73d958e14250cb9e2d6073ceee67afb490
+Author: James <bakajames@hotmail.com>
+Date:   Tue Nov 10 21:30:09 2026 +0800
+
+    add remove_order_line to Order
+
+commit 5bed890d0ff218cd98055c5d82ea8dbac8ce4af9
+Author: James <bakajames@hotmail.com>
+Date:   Tue Nov 10 21:27:13 2026 +0800
+
+    add Order class with total and display
+
+commit 5625009782eee120e69d5cb89b1bbb1d03192b89
+Author: James <bakajames@hotmail.com>
+Date:   Tue Nov 10 20:49:05 2026 +0800
+
+    add get_price and OrderLine class
+
+commit 1527a0f14894352c6b318e549abfc82bee05f343
+Author: James <bakajames@hotmail.com>
+Date:   Tue Nov 10 20:26:47 2026 +0800
+
+    add aggregation test for Inventory
+
+commit b1cb0f5ba1aa82267702e77ba54290bd117d8c96
+Author: James <bakajames@hotmail.com>
+Date:   Tue Nov 10 20:10:43 2026 +0800
+
+    add find_product and remove_product to Inventory
+
+commit 88e60454b254adb0ecbc8a833f289d82d877cf0b
+Author: James <bakajames@hotmail.com>
+Date:   Tue Nov 10 20:10:35 2026 +0800
+
+    add find_product and remove_product to Inventory
+
+commit 7cd43ec639d5c2a155df91825416105e447e0b80
+Author: James <bakajames@hotmail.com>
+Date:   Tue Nov 10 19:51:27 2026 +0800
+
+    add association test for Supplier and Product
+
+commit 08e3f526311b56f09fcb9ccaf64036aa4e3ad237
+Author: James <bakajames@hotmail.com>
+Date:   Mon Nov 9 17:43:22 2026 +0800
+
+    pass supplier through subclasses, add type hints
+
+commit 601576d05739df87bfd57fedff4dcd0fa59ef47a
+Author: James <bakajames@hotmail.com>
+Date:   Mon Nov 9 17:36:15 2026 +0800
+
+    add Supplier class and supplier to Product (children not updated yet)
+
+commit 1dd5e566afdc24f9cda14e56e230205fb215ec38
+Author: James <bakajames@hotmail.com>
+Date:   Mon Nov 9 17:12:52 2026 +0800
+
+    add Lab 7 UML diagram
+
+commit ae8cbc969ce7d68ee23723f628bdc25be16c0e3a
+Author: James <bakajames@hotmail.com>
+Date:   Mon Nov 2 15:38:57 2026 +0800
+
+    test run in Docker
+
+commit f4a39d665cd84b3efe762aef1c1b1fe8c9dcde08
+Author: James <bakajames@hotmail.com>
+Date:   Mon Nov 2 15:32:12 2026 +0800
+
+    update .gitignore
+
+commit ccf08b43a436eaeb13e8de8f5e03bc5516b53676
+Author: James <bakajames@hotmail.com>
+Date:   Mon Nov 2 15:27:43 2026 +0800
+
+    add abstract class test
+
+commit 427324fabdb3208965a7ec6123c9808608681b74
+Author: James <bakajames@hotmail.com>
+Date:   Mon Nov 2 00:17:54 2026 +0800
+
+    add delivery summary and rate display
+
+commit 395efef71ec9ea24a3c56a291de78434f2140832
+Author: James <bakajames@hotmail.com>
+Date:   Sun Nov 1 23:56:37 2026 +0800
+
+    block non-positive delivery quantities
+
+commit 69e68df1d37b48b2468c32c9e1f1e9ab549988ea
+Author: James <bakajames@hotmail.com>
+Date:   Sun Nov 1 23:52:40 2026 +0800
+
+    add deliver order option with shipping/download cost
+
+commit e9de42c1af045e7eec39ee88e3264afe8225a018
+Author: James <bakajames@hotmail.com>
+Date:   Sun Nov 1 23:25:42 2026 +0800
+
+    show costs in display, move tests to test_products.py
+
+commit 8b6bfc659612d31d675ba7d2f4fd78e50852f926
+Author: James <bakajames@hotmail.com>
+Date:   Sat Oct 31 20:19:15 2026 +0800
+
+    menu supports physical and digital products
+
+commit df5d49911c44bd9eaa99bdff76aa6e88a9715808
+Author: James <bakajames@hotmail.com>
+Date:   Sat Oct 31 19:55:43 2026 +0800
+
+    save and load product types in JSON
+
+commit cbc518547f9a130cf7bb51ab355ad88cf86a99c7
+Author: James <bakajames@hotmail.com>
+Date:   Sat Oct 31 18:53:59 2026 +0800
+
+    add CanBeDownloaded interface and download cost
+
+commit 77650af6d41332544e55cecd487de73685f2d152
+Author: James <bakajames@hotmail.com>
+Date:   Sat Oct 31 18:39:52 2026 +0800
+
+    tidy test output
+
+commit 6cc530bfdb4ad49002ab7b1b212fad9780982f40
+Author: James <bakajames@hotmail.com>
+Date:   Sat Oct 31 18:29:37 2026 +0800
+
+    add CanBeShipped interface and shipping cost
+
+commit d74fe2eb7f5920b7af128c7e7a0f433a80d1ee56
+Author: James <bakajames@hotmail.com>
+Date:   Sat Oct 31 17:54:32 2026 +0800
+
+    make Product abstract, add get_fulfilment_info
+
+commit 8a979dc9ced70f871a464842e1edb2f50f7541e4
+Author: James <bakajames@hotmail.com>
+Date:   Sat Oct 31 17:35:28 2026 +0800
+
+    add DigitalProduct subclass
+
+commit c48287a40610e124967d882892d306a2438f0434
+Author: James <bakajames@hotmail.com>
+Date:   Sat Oct 31 17:23:38 2026 +0800
+
+    add PhysicalProduct subclass
+
+commit a8d7ae6ca951dcae7f6a4d0d2e0f8cfad937b378
+Author: James <bakajames@hotmail.com>
+Date:   Thu Oct 29 20:41:54 2026 +0800
+
+    Added git log
+
 commit 96ae48256cae7e8767e93c8c5f391ce040412a35
 Author: James <bakajames@hotmail.com>
 Date:   Thu Oct 29 20:41:28 2026 +0800
