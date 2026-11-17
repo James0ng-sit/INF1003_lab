@@ -7,6 +7,7 @@ from Inventory import Inventory
 from PhysicalProduct import PhysicalProduct
 from DigitalProduct import DigitalProduct
 from Supplier import Supplier
+from ProductFactory import ProductFactory
 
 FILENAME = "inventory.json"
 
@@ -23,26 +24,20 @@ def load_inventory() -> Inventory:
                 supplier_data["contact_email"]
             )
             if item["type"] == "physical":
-                product = PhysicalProduct(
-                    item["product_id"],
-                    item["name"],
-                    item["price"],
-                    item["stock"],
-                    supplier,
-                    item["weight"],
-                    item["history"]
-                )
-            elif item["type"] == "digital":
-                product = DigitalProduct(
-                    item["product_id"],
-                    item["name"],
-                    item["price"],
-                    item["stock"],
-                    supplier,
-                    item["download_size"],
-                    item["history"] 
-                )
-            inventory.add_product(product)
+                extra = item["weight"]
+            else:
+                extra = item["download_size"]
+            product = ProductFactory.create(
+                item["type"],
+                item["product_id"],
+                item["name"],
+                item["price"],
+                item["stock"],
+                supplier,
+                extra,
+                item["history"]
+            )
+        inventory.add_product(product)
     return inventory
 
 def save_inventory(inventory: Inventory) -> None:
