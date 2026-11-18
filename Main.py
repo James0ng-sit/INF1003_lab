@@ -1,5 +1,6 @@
 import json
 import os
+import csv
 from CanBeDownloaded import CanBeDownloaded
 from CanbeShipped import CanbeShipped
 from Product import Product
@@ -166,6 +167,19 @@ def main() -> None:
 
         else:
             print("Invalid choice. Please enter a number from 1 to 7.")
+
+def load_products(path: str, inventory: Inventory, supplier: Supplier) -> None:
+    loaded = 0
+    try:
+        file = open(path, newline="")
+    except FileNotFoundError:
+        print(f"Products file not found: {path}")
+    else:
+        with file:
+            pass
+        print(f"{loaded} products loaded.")
+    finally:
+        print("Load attempt finished.")
 
 if __name__ == "__main__":
     main()
