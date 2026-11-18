@@ -176,10 +176,13 @@ def load_products(path: str, inventory: Inventory, supplier: Supplier) -> None:
         print(f"Products file not found: {path}")
     else:
         with file:
-            pass
+            reader = csv.reader(file)
+            next(reader)
+            for row in reader:
+                print(row)
         print(f"{loaded} products loaded.")
-    finally:
-        print("Load attempt finished.")
+    finally:    
+        print("Load attempt finished")
 
 if __name__ == "__main__":
     main()
