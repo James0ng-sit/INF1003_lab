@@ -6,7 +6,7 @@ class Product(ABC):
     def __init__(self, product_id: str, name: str, price: float, stock: int, 
                  supplier: Supplier, history: list = None) -> None:
             if price <= 0:
-                raise ValueError("Price must be greate than zero.")
+                raise ValueError("Price must be greater than zero.")
             if stock < 0:
                 raise ValueError("Stock cannot be negative.")
             self.__product_id: str = product_id
