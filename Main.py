@@ -179,10 +179,16 @@ def load_products(path: str, inventory: Inventory, supplier: Supplier) -> None:
             reader = csv.reader(file)
             next(reader)
             for row in reader:
-                print(row)
+                try:
+                    product_type, product_id, name, price, stock = row
+                    product = ProductFactory.create(product_type, product_id, name, float(price), int(stock), supplier)
+                    inventory.add_product(product)
+                    loaded += 1
+                except ValueError as error:
+                    print(f"Skipped row {row}: {error}")
         print(f"{loaded} products loaded.")
-    finally:    
-        print("Load attempt finished")
+    finally:
+        print("Load attempt finished.")
 
 if __name__ == "__main__":
     main()
