@@ -53,6 +53,17 @@ def get_number(prompt:str, number_type) -> int | float:
         except ValueError:
             print("Please enter a valid number.")
 
+def get_positive_float(prompt: str) -> float:
+    while True:
+        try:
+            value = float(input(prompt))
+            if value <= 0:
+                print("Please enter a number greater than 0.")
+                continue
+            return value
+        except ValueError:
+            print("Please enter a valid number, e.g. 12.50")
+
 def show_menu() -> None:
     print("\n===== INVENTORY MENU =====")
     print("1. Display all products")
@@ -87,7 +98,7 @@ def main() -> None:
             if inventory.search_product(name) is not None:
                 print("That product already exists. Use Update Stock instead.")
             else:
-                price = get_number("Price: ", float)
+                price = get_positive_float("Price: ")
                 stock = get_number("Starting stock: ", int)
                 supplier_id = input("Supplier ID: ").strip() 
                 supplier_name = input("Supplier Name: ").strip()
